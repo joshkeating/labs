@@ -21,7 +21,7 @@ g <- g + labs(x = "Sepal Length (cm)", y = "Sepal Width (cm)", title = 'Sepal Le
 g <- g+theme(legend.title=element_blank())
 
 #and the legend dots are tiny
-g + guides(colour = guide_legend(override.aes = list(size=4)))
+g + guides(colour = guide_legend(override.aes = list(size = 4)))
 
 #shall we change the background color?
 g <- g + theme(panel.background = element_rect(fill = 'grey75'))
