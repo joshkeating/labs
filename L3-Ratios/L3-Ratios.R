@@ -20,7 +20,7 @@ control.noresp.neg <- nrow(filter(data, Treat == "Cont", Postwt - Prewt <= 0))
 
 #What kind of analysis appropriate to perform on a study like this?
 
-
+# An odds ratio.
 
 
 #Perform the appropriate choice on the dataset
