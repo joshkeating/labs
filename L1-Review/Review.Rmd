@@ -10,19 +10,20 @@ output: html_document
 #https://www.healthdata.gov/dataset/deaths-pnuemonia-and-influneza-and-all-deaths-state-and-region-national-center-health
 
 #We will be requiring knitr, dplyr, and ggplot2
-
-
+library(knitr)
+library(dplyr)
+library(ggplot2)
 
 #Read in the dataset
-
-
+setwd("/home/josh/School_16-17/Q2/info498c/labs/L1-Review/")
+data <- read.csv(file = 'flu_deaths.csv')
 
 #Handle NA values
-
-
-
+data[is.na(data)] <- 0
 
 #Create one summary table and one plot about two different aspects of the dataset. Include a small paragraph explaining what each table/plot is showing.
+
+
 
 ```
 

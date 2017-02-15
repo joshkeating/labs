@@ -5,10 +5,17 @@ library(ggplot2)
 data <- iris
 
 #basic scatter plot
+<<<<<<< HEAD
 g<-ggplot(data, aes(Sepal.Length, Sepal.Width, color=factor(Species)))+geom_point()
 
 #lets get a title and axis labels in the mix
 g<-g+labs(x="Sepal Length", y="Sepal Width", title='Sepal Length vs Sepal Width')
+=======
+
+
+#lets get a title and axis labels in the mix
+
+>>>>>>> 6fce470e4b79f693ac3561fe1e24581138f32902
 
 #lets say we want to then color the graph by species of iris
 #color is then specified in aes because it is a function of the dataset
@@ -16,15 +23,22 @@ g<-g+labs(x="Sepal Length", y="Sepal Width", title='Sepal Length vs Sepal Width'
 
 
 #legend title is ugly
+<<<<<<< HEAD
 g<- g+theme(legend.title=element_blank())
 
 #and the legend dots are tiny
 g <- g+ guides(color = guide_legend(override.aes = list(size = 4)))
+=======
+
+
+#and the legend dots are tiny
+>>>>>>> 6fce470e4b79f693ac3561fe1e24581138f32902
 
 
 #much better
 
 #shall we change the background color?
+<<<<<<< HEAD
 g <- g + theme(panel.background = element_rect(fill="grey75"))
 
 
@@ -36,12 +50,31 @@ g <- g + facet_wrap(~Species, nrow=1)
 
 #that isn't quite what we were looking for, lets do a best fit instead
 g <- g + stat_smooth(method = "lm", se=FALSE, col="black")
+=======
+
+
+#hm you know I changed my mind about all the species being on one graph, lets put it on three
+
+
+#lets add a line to those plots!
+
+
+#that isn't quite what we were looking for, lets do a best fit instead
+
+>>>>>>> 6fce470e4b79f693ac3561fe1e24581138f32902
 
 #you can get all sorts of funky themes in the mix
 #https://github.com/jrnold/ggthemes
 library(ggthemes)
+<<<<<<< HEAD
 g<- g+theme_economist()+scale_colour_economist()
 #NEAT
 
 #plotting
 g
+=======
+
+#NEAT
+
+#plotting
+>>>>>>> 6fce470e4b79f693ac3561fe1e24581138f32902

@@ -12,6 +12,7 @@ library(ggplot2)
 data <- iris
 
 #basic scatter plot
+<<<<<<< HEAD
 g<-ggplot(data, aes(Sepal.Length, Sepal.Width))+geom_point(color="blue")
 
 #lets get a title and axis labels in the mix
@@ -48,6 +49,30 @@ g<-g+stat_smooth(method="lm", se=FALSE, col="black")
 library(ggthemes)
 g<- g+theme_economist()+scale_colour_economist()
 #NEAT
+=======
+g <- ggplot(data, aes(Sepal.Length, Sepal.Width, color = factor(Species))) + geom_point()
+
+#lets get a title and axis labels in the mix
+g <- g + labs(x = "Sepal Length (cm)", y = "Sepal Width (cm)", title = 'Sepal Length vs Sepal Width')
+
+#legend title is ugly
+g <- g+theme(legend.title=element_blank())
+
+#and the legend dots are tiny
+g + guides(colour = guide_legend(override.aes = list(size = 4)))
+
+#shall we change the background color?
+g <- g + theme(panel.background = element_rect(fill = 'grey75'))
+
+#hm you know I changed my mind about all the species being on one graph, lets put it on three
+g <- g+facet_wrap(~Species, nrow = 1)
+
+#lets add a line to those plots!
+# g <- g + stat_smooth()
+
+#that isn't quite what we were looking for, lets do a best fit instead
+g <- g + stat_smooth(method = "lm", se = FALSE, col = "black")
+>>>>>>> 6fce470e4b79f693ac3561fe1e24581138f32902
 
 #plotting
 g
